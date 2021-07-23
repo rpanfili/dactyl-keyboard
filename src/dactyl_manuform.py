@@ -137,8 +137,8 @@ wire_post_overhang = 3.5
 wire_post_diameter = 2.6
 
 screw_insert_height = 3.8
-screw_insert_bottom_radius = 5.31 / 2
-screw_insert_top_radius = 5.1 / 2
+screw_insert_bottom_radius = 5.1 / 2
+screw_insert_top_radius = 4.7 / 2
 
 
 # save_path = path.join("..", "things", save_dir)
@@ -2337,10 +2337,10 @@ def screw_insert(column, row, bottom_radius, top_radius, height):
 
     if screws_offset == 'INSIDE':
         # debugprint('Shift Inside')
-        shift_left_adjust = wall_base_x_thickness
-        shift_right_adjust = -wall_base_x_thickness/2
-        shift_down_adjust = -wall_base_y_thickness/2
-        shift_up_adjust = -wall_base_y_thickness/3
+        shift_left_adjust = wall_base_x_thickness*2
+        shift_right_adjust = -wall_base_x_thickness*1.4 #ok
+        shift_down_adjust = -wall_base_y_thickness*2 #ok
+        shift_up_adjust = -wall_base_y_thickness
 
     elif screws_offset == 'OUTSIDE':
         debugprint('Shift Outside')
@@ -2389,7 +2389,7 @@ def screw_insert(column, row, bottom_radius, top_radius, height):
 def screw_insert_thumb(bottom_radius, top_radius, height):
     if thumb_style == 'MINI':
         position = thumborigin()
-        position = list(np.array(position) + np.array([-29, -51, -16]))
+        position = list(np.array(position) + np.array([-29, -49, -16]))
         position[2] = 0
 
     elif thumb_style == 'CARBONFET':
