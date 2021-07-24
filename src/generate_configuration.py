@@ -20,7 +20,7 @@ shape_config = {
     "beta": pi / 36.0,  # curvature of the rows
     "centercol": 3,  # controls left_right tilt / tenting (higher number is more tenting)
     "centerrow_offset": 3,  # rows from max, controls front_back tilt
-    "tenting_angle": pi / 12.0,  # or, change this for more precise tenting control
+    "tenting_angle": pi / 11.0,  # or, change this for more precise tenting control
     # symmetry states if it is a symmetric or asymmetric bui.  If asymmetric it doubles the generation time.
     "symmetry": "symmetric",  # "asymmetric" or "symmetric"
     "column_style_gt5": "orthographic",
@@ -47,7 +47,7 @@ shape_config = {
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
     ##############################
-    "extra_width": 2.5,  # extra space between the base of keys# original= 2
+    "extra_width": 0.6,  # extra space between the base of keys# original= 2
     "extra_height": 1.0,  # original= 0.5
     "wall_z_offset": 15,  # length of the first downward_sloping part of the wall
     "wall_x_offset": 5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)

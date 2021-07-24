@@ -100,7 +100,7 @@ if 'HS_' in plate_style:
     plate_offset = 0.0
 
 mount_width = keyswitch_width + 2 * plate_rim
-mount_height = keyswitch_height + 2 * plate_rim
+mount_height = keyswitch_height + 0.6 * plate_rim
 mount_thickness = plate_thickness
 double_plate_height = (sa_double_length - mount_height) / 3
 
