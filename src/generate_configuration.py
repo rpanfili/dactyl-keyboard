@@ -27,7 +27,7 @@ shape_config = {
     "column_style": "standard",  # options include :standard, :orthographic, and :fixed
     "thumb_offsets": [6, -3, 7],
     "keyboard_z_offset": (
-        7  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        9  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
     ##############################
     # THUMB PARAMETERS
@@ -47,7 +47,7 @@ shape_config = {
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
     ##############################
-    "extra_width": 1.4,  # extra space between the base of keys# original= 2
+    "extra_width": 2,  # extra space between the base of keys# original= 2
     "extra_height": 0,  # original= 0.5
     "wall_z_offset": 15,  # length of the first downward_sloping part of the wall
     "wall_x_offset": 5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
@@ -260,13 +260,13 @@ shape_config = {
     ## COLUMN OFFSETS
     ####################################
     "column_offsets": [
+        [0, -1, 0],
         [0, 0, 0],
-        [0, 0, 0],
-        [0, 2.82, -4.5],
-        [0, 0, 0],
-        [0, -6, 5],  # REDUCED STAGGER
-        [0, -6, 5],  # REDUCED STAGGER
-        [0, -6, 5],  # NOT USED IN MOST FORMATS (7th column)
+        [-0.5, 3.5, -4.5], #4th - 4
+        [0, 0, 0], # 5th - 3
+        [1, -12, 3],  # REDUCED STAGGER
+        [1, -13, 5],  # REDUCED STAGGER
+        [1, -13, 5],  # NOT USED IN MOST FORMATS (7th column)
     ],
 }
 

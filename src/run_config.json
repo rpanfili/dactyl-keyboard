@@ -18,7 +18,7 @@
         -3,
         7
     ],
-    "keyboard_z_offset": 7,
+    "keyboard_z_offset": 9,
     "thumb_style": "MINI",
     "thumb_plate_tr_rotation": 0.0,
     "thumb_plate_tl_rotation": 0.0,
@@ -29,7 +29,7 @@
     "pinky_1_5U": false,
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
-    "extra_width": 1.4,
+    "extra_width": 2,
     "extra_height": 0,
     "wall_z_offset": 15,
     "wall_x_offset": 5,
@@ -206,7 +206,7 @@
     "column_offsets": [
         [
             0,
-            0,
+            -1,
             0
         ],
         [
@@ -215,8 +215,8 @@
             0
         ],
         [
-            0,
-            2.82,
+            -0.5,
+            3.5,
             -4.5
         ],
         [
@@ -225,18 +225,18 @@
             0
         ],
         [
-            0,
-            -6,
+            1,
+            -12,
+            3
+        ],
+        [
+            1,
+            -13,
             5
         ],
         [
-            0,
-            -6,
-            5
-        ],
-        [
-            0,
-            -6,
+            1,
+            -13,
             5
         ]
     ]
