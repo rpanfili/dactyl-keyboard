@@ -22,6 +22,9 @@ def rad2deg(rad: float) -> float:
 ## IMPORT DEFAULT CONFIG IN CASE NEW PARAMETERS EXIST
 import generate_configuration as cfg
 
+from pprint import pprint
+pprint(cfg.shape_config)
+
 for item in cfg.shape_config:
     locals()[item] = cfg.shape_config[item]
 
@@ -103,8 +106,12 @@ if "HS_" in plate_style:
     plate_offset = 0.0
 
 mount_width = keyswitch_width + 2 * plate_rim
-mount_height = keyswitch_height + 0.6 * plate_rim
+mount_height = keyswitch_height + 2 * plate_rim
 mount_thickness = plate_thickness
+
+sa_length = globals().get('sa_length', 18.25)
+sa_double_length = globals().get('sa_double_length', sa_length * 2)
+
 double_plate_height = (sa_double_length - mount_height) / 3
 
 if oled_mount_type is not None:
@@ -277,17 +284,25 @@ def single_plate(cylinder_segments=100, side="right"):
 
 def sa_cap(Usize=1):
     # MODIFIED TO NOT HAVE THE ROTATION.  NEEDS ROTATION DURING ASSEMBLY
-    sa_length = 18.25
+    
+    keycaps = {
+        "sa": {"length": sa_length, "height": 12, "top_length": 12},
+        "dsa": {"length": sa_length, "height": 7.5, "top_length": 12},
+    }
+
+    keycap_profile = globals().get('keycap_profile', 'sa')
+
+    keycap_geometry = keycaps[keycap_profile]
 
     if Usize == 1:
-        bl2 = 18.5 / 2
-        bw2 = 18.5 / 2
-        m = 17 / 2
-        pl2 = 6
-        pw2 = 6
+        bl2 = keycap_geometry.get("length", sa_length) / 2
+        bw2 = bl2
+        pl2 = keycap_geometry.get("top_length", 12) / 2
+        pw2 = pl2
+        m = abs(bl2 - pl2) * 0.6 + min(bl2, pl2)
 
     elif Usize == 2:
-        bl2 = sa_length
+        bl2 = sa_double_length/2 
         bw2 = sa_length / 2
         m = 0
         pl2 = 16
@@ -305,12 +320,12 @@ def sa_cap(Usize=1):
     k1 = translate(k1, (0, 0, 0.05))
     k2 = polyline([(pw2, pl2), (pw2, -pl2), (-pw2, -pl2), (-pw2, pl2), (pw2, pl2)])
     k2 = extrude_poly(outer_poly=k2, height=0.1)
-    k2 = translate(k2, (0, 0, 12.0))
+    k2 = translate(k2, (0, 0, keycap_geometry.get("height", 12)))
     if m > 0:
         m1 = polyline([(m, m), (m, -m), (-m, -m), (-m, m), (m, m)])
         # m1 = cq.Wire.assembleEdges(m1.edges().objects)
         m1 = extrude_poly(outer_poly=m1, height=0.1)
-        m1 = translate(m1, (0, 0, 6.0))
+        m1 = translate(m1, (0, 0, keycap_geometry.get("height", 12) / 2))
         key_cap = hull_from_shapes((k1, k2, m1))
     else:
         key_cap = hull_from_shapes((k1, k2))

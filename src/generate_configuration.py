@@ -47,8 +47,8 @@ shape_config = {
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
     ##############################
-    "extra_width": 0.6,  # extra space between the base of keys# original= 2
-    "extra_height": 1.0,  # original= 0.5
+    "extra_width": 1.4,  # extra space between the base of keys# original= 2
+    "extra_height": 0,  # original= 0.5
     "wall_z_offset": 15,  # length of the first downward_sloping part of the wall
     "wall_x_offset": 5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
     "wall_y_offset": 6,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
@@ -96,9 +96,10 @@ shape_config = {
     "undercut_keyswitch_height": 14.0,
     "undercut_keyswitch_width": 14.0,
     "notch_width": 5.0,  # If using notch, it is identical to undecut, but only locally by the switch clip
+    "keycap_profile": "dsa",  # sa, dsa
     "sa_profile_key_height": 12.7,
-    "sa_length": 18.25,
-    "sa_double_length": 37.5,
+    # "sa_length": 18.25,
+    #"sa_double_length": 37.5,
     "plate_thickness": 4 + 1.1,
     "plate_rim": 1.5 + 0.5,
     # Undercut style dimensions
